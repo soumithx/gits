@@ -1,0 +1,18 @@
+Step 1 : check the required port numbers is open or not 
+
+Step 2: Start zookeeper --> /bin/zookeeper-server-start.sh ~/kafka_path/config/zookeeper.properties
+
+Step 3: Start Kafka Server --> /bin/zookeeper-server-start.sh ~/kafka_path/config/server.properties
+
+Step 4: Add Kafka topic -->  ./kafka-topics.sh --create --zookeeper 127.0.0.1:2181 --replication-factor 1 --partitions 1 --topic fred
+
+Step 5: make sure the topic is in list --> ./kafka-topics.sh --list --zookeeper 127.0.0.1:2181 
+
+Step 6: Start the producer Console --->  ./kafka-console-producer.sh --broker-list localhost:9092 --topic fred
+
+Step 7:Start the Consumer Console from the client --> ./kafka-console-consumer.sh --bootstrap-server localhost:9092 --topic fred --from-beginning        ####if --bootstrap-server not worked try --zookeeper localhost:2181
+
+
+
+
+
